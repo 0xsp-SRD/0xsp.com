@@ -1,0 +1,1 @@
+public CDN for images
