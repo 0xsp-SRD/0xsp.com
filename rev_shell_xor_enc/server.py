@@ -1,7 +1,7 @@
 import socket
 
 
-key = b'\x01\x02\x03\x04\x05\x06\x07\x08' // KEY as array of bytes 
+key = b'\x01\x02\x03\x04\x05\x06\x07\x08' 
 
 
 def encrypt(data):
