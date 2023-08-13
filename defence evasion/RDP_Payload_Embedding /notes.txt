@@ -1,1 +1,1 @@
-
+ref : https://0xsp.com/offensive/navigating-embedded-payload-extraction-from-rdp-files-defence-evasion/
