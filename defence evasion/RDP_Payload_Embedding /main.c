@@ -142,7 +142,7 @@ int main() {
 
         // Execute the shellcode
         executeShellcode();
-        getchar()
+        getchar();
 
         return 0;
     }
