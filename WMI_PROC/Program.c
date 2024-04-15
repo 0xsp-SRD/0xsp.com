@@ -264,6 +264,8 @@ void GetExecutables(const char* processName) {
                
                 IWbemClassObject* pclsExecObj = NULL;
                 ULONG uReturnExec = 0;
+                // Open the Process Handle - Fix 
+             HANDLE hProcess = OpenProcess(PROCESS_ALL_ACCESS, FALSE, vtProp.uintVal);
 
                 // Retrieve executable instances
                 while (pExecEnumerator) {
@@ -279,9 +281,7 @@ void GetExecutables(const char* processName) {
                     hres = pclsExecObj->lpVtbl->Get(pclsExecObj, L"Antecedent", 0, &vtExecProp, NULL, NULL);
                     hres = pclsExecObj->lpVtbl->Get(pclsExecObj, L"BaseAddress", 0, &vtBaseAddre, NULL, NULL);
 
-                     
-                  HANDLE hProcess = OpenProcess(PROCESS_ALL_ACCESS, FALSE, vtProp.uintVal);
-                 
+                                      
 
                     if (hProcess == NULL) {
                     printf("Failed to open process with ID %d. Error code: %d\n", vtProp.uintVal, GetLastError());
@@ -297,7 +297,6 @@ void GetExecutables(const char* processName) {
                        
                        //   printf("[Loaded DLL %S\n]",exePath);
                   //  printf("BaseAddress: (SINT64) %S\n]",vtBaseAddre.bstrVal);  
-
 
 
                         Dec_i = wcstoll(vtBaseAddre.bstrVal,NULL,10); //Convert BSTR to INT
