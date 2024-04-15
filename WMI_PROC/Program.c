@@ -3,7 +3,7 @@ Title : WMI to Enumerate a Process Modules and Their Base Addresses
 @zux0x3a 
 
 compile : x86_x64-w64-mingw32-gcc Program.c -o wmi.exe -lole32 -loleaut32 -lwebmuuid 
-Article : 
+Article : https://0xsp.com/uncategorized/how-i-leveraged-wmi-to-enumerate-a-process-modules-and-their-base-addresses/
 
 */ 
 	
