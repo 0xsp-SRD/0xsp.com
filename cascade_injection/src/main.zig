@@ -731,7 +731,7 @@ pub fn main() !void {
     };
 
     const process = "Notepad.exe"; // choose a process.
-    const file_path = ".\\w64-exec-calc-shellcode.bin"; // rename this to your shellcode
+    const file_path = ".\\shell.bin"; // rename this to your shellcode
 
     if (!fileRead(file_path, &payload)) {
         std.debug.print("[-] Failed to read file: {s}\n", .{file_path});
